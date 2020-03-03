@@ -50,8 +50,8 @@ h6 {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #1bb1dc;
-  color: #fff;
+  background: #fff;
+  color: #000;
   width: 44px;
   height: 44px;
   text-align: center;
@@ -66,7 +66,7 @@ h6 {
 
 .back-to-top i {
   padding-top: 12px;
-  color: #fff;
+  color: #1bb1dc;
 }
 
 /* Prelaoder */
@@ -692,19 +692,19 @@ h6 {
 --------------------------------*/
 
 #call-to-action {
-  background: #2d2b46;
+  background: #f0f4f8;
   background-size: cover;
   padding: 40px 0;
 }
 
 #call-to-action .cta-title {
-  color: #fff;
+  color: #000000;
   font-size: 28px;
   font-weight: 700;
 }
 
 #call-to-action .cta-text {
-  color: #fff;
+  color: #000;
 }
 
 #call-to-action .cta-btn {
@@ -1217,7 +1217,7 @@ h6 {
 #footer {
   padding: 0 0 30px 0;
   font-size: 14px;
-  background: #fff;
+  background: #61cdee;
 }
 
 #footer .footer-top {
@@ -1434,11 +1434,11 @@ h6 {
   text-align: center;
   font-size: 14px;
   padding-top: 4px;
-  color: #8582a8;
+  color: #fff;
 }
 
 #footer .credits a {
-  color: #1bb1dc;
+  color: #fff;
 }
 
 #footer .credits a:hover {
