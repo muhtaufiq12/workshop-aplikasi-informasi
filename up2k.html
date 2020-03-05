@@ -8,14 +8,15 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/logopkk.png" rel="icon">
-  <link href="img/logopkk.png" rel="apple-touch-icon">
+  <link href="img/logoPKK.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -56,14 +57,14 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!--<a href="#intro" class="scrollto"><span><img src="img/logo.png"></span></a>-->
-        <a href="index.html" class="scrollto"><img src="img/logoPKK.png" alt="Image" height="30" width="30"></a>
+        <!-- <h1 class="text-light"><a href="#intro" class="scrollto"><span>PKK</span></a></h1> -->
+        <a href="index.html" class="scrollto"><img src="img/logoPKK.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
           <li><a href="index.html">Beranda</a></li>
-          <li class="drop-down main-nav active"><a href="#intro">Profil</a>
+          <li class="drop-down main-nav"><a href="profil.html">Profil</a>
             <ul>
               <li><a href="visimisi.html">Visi Misi</a></li>
               <li><a href="tujuan.html">Tujuan</a></li>
@@ -76,12 +77,11 @@
           </li>
           <li><a href="">Berita</a></li>
           <li><a href="proker.html">Program Kerja</a></li>
-          <li><a href="up2k.html">U2PK</a></li>
+          <li class="main-nav active"><a href="#intro">U2PK</a></li>
           <li><a href="">Data Kegiatan</a></li>
           <li><a href="">Pengumuman</a></li>
           <li><a href="">Galeri</a></li>
           <li><a href="">Kontak</a></li>
-        </ul>
       </nav><!-- .main-nav -->
       
     </div>
@@ -94,81 +94,81 @@
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
         <div class="col-md-6 intro-info order-md-first order-last">
-          <h2>Profil PKK<br>Kelurahan <span>Karah</span></h2>
+          <h2>UP2K<br>PKK Kelurahan <span>Karah</span></h2>
         </div>
   
-        <div class="col-md-6 intro-img order-md-last order-last">
-          <img src="img/ibupkk.jpg" alt="image"  class="img-fluid">
+        <div class="col-md-6 intro-img order-md-last order-first">
+          <img src="img/logoPKK.png" alt="" class="img-fluid">
         </div>
       </div>
 
     </div>
   </section><!-- #intro -->
 
-  <main id="main">
-
-
     <!--==========================
-      Services Section
+      U2PK Section
     ============================-->
-    <section id="services" class="section-bg">
+    <section id="u2pk">
+      <br>
+      <br>
       <div class="container">
-
         <header class="section-header">
-          <h3>PROFIL</h3>
-          <p>PKK Kelurahan Karah</p>
+          <h3 class="section-title">U2PK</h3>
         </header>
+        <div class="row feature-item">
 
-        <div class="row">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#data_perkembangan">Data Perkembangan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#kiat-kiat">Kiat-Kiat Keberhasilan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#data2014">Data Triwulan Tahun 2014</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#data2015">Data Triwulan Tahun 2015</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#data2016">Data Triwulan Tahun 2016</a>
+            </li>
+          </ul>
 
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><img src="img/visimisi.png" width="55" height="55"></div>
-              <h4 class="title"><a href="visimisi.html">Visi Misi</a></h4>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div id="data_perkembangan" class="container tab-pane active"><br>
+              <!-- <h3>HOME</h3> -->
+              <p><img src="img/u2pk/data perkembangan.png" alt="" class="img-fluid"></p>
+            </div>
+            <div id="kiat-kiat" class="container tab-pane fade"><br>
+              <!-- <h3>Menu 1</h3> -->
+              <p><img src="img/u2pk/kiat_1.png" alt="" class="img-fluid"></p>
+              <p><img src="img/u2pk/kiat_2.png" alt="" class="img-fluid"></p>
+              <p><img src="img/u2pk/kiat_3.png" alt="" class="img-fluid"></p>
+              <p><img src="img/u2pk/kiat_4.png" alt="" class="img-fluid"></p>
+              <p><img src="img/u2pk/kiat_5.png" alt="" class="img-fluid"></p>
+            </div>
+            <div id="data2014" class="container tab-pane fade"><br>
+              <!-- <h3>Menu 2</h3> -->
+              <p><img src="img/u2pk/2014_1.png" alt="" class="img-fluid"></p>
+              <p><img src="img/u2pk/2014_2.png" alt="" class="img-fluid"></p>
+            </div>
+            <div id="data2015" class="container tab-pane fade"><br>
+              <p><img src="img/u2pk/2015_1.png" alt="" class="img-fluid"></p>
+              <p><img src="img/u2pk/2015_2.png" alt="" class="img-fluid"></p>
+            </div>
+            <div id="data2016" class="container tab-pane fade"><br>
+              <p><img src="img/u2pk/2016_1.png" alt="" class="img-fluid"></p>
+              <p><img src="img/u2pk/2016_2.png" alt="" class="img-fluid"></p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><img src="img/tujuan.png" width="55" height="55"></div>
-              <h4 class="title"><a href="tujuan.html">Tujuan</a></h4>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><img src="img/Struktur.png" width="55" height="55"></div>
-              <h4 class="title"><a href="struktur.html">Struktur Organisasi</a></h4>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="box">
-                <div class="icon"><img src="img/logopkk.png" width="55" height="55"></div>
-                <h4 class="title"><a href="lambang.html">Arti Lambang</a></h4>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
-            <div class="box">
-                <div class="icon"><img src="img/sejarah.png" width="55" height="55"></div>
-              <h4 class="title"><a href="sejarah.html">Sejarah</a></h4>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
-            <div class="box">
-                <div class="icon"><img src="img/Dharma_wanita.png" width="55" height="55"></div>
-              <h4 class="title"><a href="marspkk.html">Mars PKK</a></h4>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
-            <div class="box">
-                <div class="icon"><img src="img/program.png" width="55" height="55"></div>
-              <h4 class="title"><a href="10pokok.html">10 Program PKK</a></h4>
-            </div>
-          </div>
+          
         </div>
 
       </div>
-    </section><!-- #services -->
+    </section><!-- #about -->
 
     <section id="testimonials">
       <div class="container">
