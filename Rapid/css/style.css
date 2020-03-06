@@ -1582,7 +1582,7 @@ h6 {
   content: " ";
   width: 2px;
   background-color: #4997cd;
-  left: 50%;
+  left: 47.5%;
   margin-left: -1.5px;
 }
 #timeline .clearFix {
@@ -1592,12 +1592,13 @@ h6 {
 #timeline .timeline-badge {
   color: #fff;
   width: 60px;
-  height: 60px;
+  height: 66px;
   font-size: 1.2em;
   text-align: center;
   position: absolute;
   top: 20px;
-  left: 50%;
+  left: 47.5%;
+  padding-top: 7.5px;
   margin-left: -25px;
   background-color: #4997cd;
   z-index: 100;
@@ -1610,8 +1611,8 @@ h6 {
   font-size: 1.2em;
 }
 #timeline .timeline-badge span.timeline-balloon-date-month {
-  font-size: .8em;
-  top: -10px;
+  font-size: .9em;
+  padding-bottom: 0px;
 }
 #timeline .timeline-badge.timeline-filter-movement {
   background-color: #ffffff;
