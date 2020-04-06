@@ -9,7 +9,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
         <!-- App title -->
-        <title>Kelurahan Karah | Sambutan Lurah</title>
+        <title>Kelurahan Karah | Sambutan Ketua TP-PKK</title>
 
         <!-- Summernote css -->
         <link href="../plugins/summernote/summernote.css" rel="stylesheet" />
@@ -60,14 +60,14 @@
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
-                                    <h4 class="page-title">Tujuan PKK </h4>
+                                    <h4 class="page-title">Beranda  </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Pages</a>
                                         </li>
                                      
                                         <li class="active">
-                                         Profil
+                                         Beranda
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -83,7 +83,7 @@
                                         <form name="aboutus" method="post">
  <div class="form-group m-b-20">
 <label for="exampleInputEmail1">Page Title</label>
-<input type="text" class="form-control" id="pagetitle" name="pagetitle" value="Tujuan PKK"  required>
+<input type="text" class="form-control" id="pagetitle" name="pagetitle" value="Arti Lambang"  required>
 </div>
 
 
@@ -95,13 +95,23 @@
      <div class="row">
 <div class="col-sm-12">
  <div class="card-box">
-<h4 class="m-b-30 m-t-0 header-title"><b>Page Detail</b></h4>
-<textarea class="summernote" name="pagedescription"  required><b>GERAKAN PKK BERTUJUAN MEMEBRDAYAKAN KELUARAGA UNTUK MENINGKATKAN KESEJAHTERAAN MENUJU TERWUJUDNYA KELUARGA YANG BERIMAN DAN BERTAQWA KEPADA TUHAN YANG MAHA ESA, BERAKHLAK MULIA DAN 
-            BERBUDI LUHUR, SEHAT SEJAHTERA, LAHIR DAN BATIN.</b></textarea>
+<h4 class="m-b-30 m-t-0 header-title"><b>Page Details</b></h4>
+<textarea class="summernote" name="pagedescription"  required><p class="cta-text">Pemberdayaan dan Kesejahteraan Keluarga (PKK) yang merupakan gerakan nasional untuk pembangunan keluarga, berazaskan Pancasila dan UUD 1945 dan bertaqwa 
+                  kepada Tuhan Yang Maha Esa, melakukan kegiatan yang terus menerus dan berkesinambungan untuk menghimpun, menggerakan dan membina masyarakat dengan melaksanakan 10 Program
+                   Pokok PKK dengan sasaran keluarga sebagai unit terkecil dalam masyarakat untuk mewujudkan keluarga sejahtera yang selalu hidup dalam suasana damai, aman, tertib, tenteram, 
+                   makmur dan sejahtera dalam rangka Ketahanan Nasional.</p></textarea>
 </div>
 </div>
 </div>
 
+<div class="row">
+<div class="col-sm-12">
+ <div class="card-box">
+<h4 class="m-b-30 m-t-0 header-title"><b>Feature Image</b></h4>
+<input type="file" class="form-control" id="postimage" name="postimage"  required>
+</div>
+</div>
+</div>
 
 <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update and Post</button>
 
