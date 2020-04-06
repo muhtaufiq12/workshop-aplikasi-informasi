@@ -23,7 +23,8 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Profil </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Visi Misi</a></li>
+                                    <li><a href="visimisi.php">Visi Misi Kelurahan</a></li>
+                                    <li><a href="visimisipkk.php">Visi Misi PKK</a></li>
                                     <li><a href="#">Tujuan</a></li>
                                     <li><a href="#">Struktur Organisasi</a></li>
                                     <li><a href="#">Arti Lambang PKK</a></li>
