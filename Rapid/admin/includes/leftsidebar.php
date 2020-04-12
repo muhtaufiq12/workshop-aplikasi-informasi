@@ -6,7 +6,7 @@
                         <ul>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                                <a href="index.php" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Dashboard </span> </a>
 
                             </li>
 
@@ -16,7 +16,7 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Beranda </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="sambutanlurah.php">Sambutan Lurah</a></li>
-                                    <li><a href="sambutanketuatppkk.php">Sambutan Ketua TP-PKK</a></li>
+                                    <li><a href="sambutantppkk.php">Sambutan Ketua TP-PKK</a></li>
                                 </ul>
                             </li>
 

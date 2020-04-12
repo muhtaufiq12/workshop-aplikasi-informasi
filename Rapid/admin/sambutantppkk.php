@@ -1,15 +1,41 @@
+<?php 
+session_start();
+include('includes/config.php');
+error_reporting(0);
+if(strlen($_SESSION['login'])==0)
+  { 
+header('location:login.php');
+}
+else{
+if(isset($_POST['update']))
+{
+$pagetype='sambutantppkk';
+$pagetitle=$_POST['pagetitle'];
+$pagedetails=$_POST['pagedescription'];
+
+$query=mysqli_query($con,"update tblberanda set PageTitle='$pagetitle',Description='$pagedetails' where PageName='$pagetype' ");
+if($query)
+{
+$msg="Sambutan TP-PKK successfully updated ";
+}
+else{
+$error="Something went wrong . Please try again.";    
+} 
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-        <meta name="author" content="Coderthemes">
+    <title>Kelurahan Karah | Admin Panel</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-        <!-- App title -->
-        <title>Kelurahan Karah | Sambutan Ketua TP-PKK</title>
+    <!-- Favicons -->
+    <link href="img/Logo-PKK.png" rel="icon">
+    <link href="img/Logo-PKK.png" rel="apple-touch-icon">
 
         <!-- Summernote css -->
         <link href="../plugins/summernote/summernote.css" rel="stylesheet" />
@@ -41,9 +67,9 @@
         <div id="wrapper">
 
             <!-- Top Bar Start -->
-           <?php include('topheader.php');?>
+           <?php include('includes/topheader.php');?>
             <!-- ========== Left Sidebar Start ========== -->
-             <?php include('leftsidebar.php');?>
+             <?php include('includes/leftsidebar.php');?>
             <!-- Left Sidebar End -->
 
 
@@ -60,14 +86,14 @@
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
-                                    <h4 class="page-title">Beranda  </h4>
+                                    <h4 class="page-title">Beranda</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Pages</a>
                                         </li>
                                      
                                         <li class="active">
-                                         Beranda
+                                         Sambutan TP-PKK
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -76,6 +102,32 @@
 						</div>
                         <!-- end row -->
 
+<div class="row">
+<div class="col-sm-6">  
+<!---Success Message--->  
+<?php if($msg){ ?>
+<div class="alert alert-success" role="alert">
+<strong>Well done!</strong> <?php echo htmlentities($msg);?>
+</div>
+<?php } ?>
+
+<!---Error Message--->
+<?php if($error){ ?>
+<div class="alert alert-danger" role="alert">
+<strong>Oh snap!</strong> <?php echo htmlentities($error);?></div>
+<?php } ?>
+
+
+</div>
+</div>
+<?php 
+$pagetype='sambutantppkk';
+$query=mysqli_query($con,"select PageTitle,Description from tblberanda where PageName='$pagetype'");
+while($row=mysqli_fetch_array($query))
+{
+
+?>
+
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="p-6">
@@ -83,7 +135,7 @@
                                         <form name="aboutus" method="post">
  <div class="form-group m-b-20">
 <label for="exampleInputEmail1">Page Title</label>
-<input type="text" class="form-control" id="pagetitle" name="pagetitle" value="Sambutan Ketua TP-PKK Kelurahan Karah"  required>
+<input type="text" class="form-control" id="pagetitle" name="pagetitle" value="<?php echo htmlentities($row['PageTitle'])?>"  required>
 </div>
 
 
@@ -96,26 +148,11 @@
 <div class="col-sm-12">
  <div class="card-box">
 <h4 class="m-b-30 m-t-0 header-title"><b>Page Details</b></h4>
-<textarea class="summernote" name="pagedescription"  required>Assalamualaikum Wr. Wb. <br> Salam sejahtera bagi kita semua, Puji syukur kehadirat Allah SWT atas segala 
-                ridhonya, dalam rangka mempublikasikan informasi dan dokumentasi kegiatan PKK Kelurahan Karah, dihadirkan portal 
-                Kelurahan Karah & TP PKK Kelurahan Karah. Dengan hadirnya portal ini diharapkan bisa menjadi media informasi dan
-                 publikasi untuk memenuhi kebutuhan informasi masyarakat. Portal ini dapat diakses melalui internet, dimana saja, 
-                 apan saja dan siapa saja, berbagai info tentang kegiatan PKK Kelurahan Karah, dan informasi lain yang bermanfaat. 
-                 Informasi tidak terbatas hanya kegiatan PKK Kelurahan Karah saja, namun juga berbagai informasi penting yang harus 
-                 dan wajib diketahui seluruh warga masyarakat Se Kelurahan Karah dan sekitarnya. <br> Wassalamualaikum Wr. Wb.</p>
-              <p><b>Ketua TP-PKK Kelurahan Karah</b></textarea>
+<textarea class="summernote" name="pagedescription"  required><?php echo htmlentities($row['Description'])?></textarea>
 </div>
 </div>
 </div>
-
-<div class="row">
-<div class="col-sm-12">
- <div class="card-box">
-<h4 class="m-b-30 m-t-0 header-title"><b>Feature Image</b></h4>
-<input type="file" class="form-control" id="postimage" name="postimage"  required>
-</div>
-</div>
-</div>
+<?php } ?>
 
 <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update and Post</button>
 
@@ -132,7 +169,7 @@
 
                 </div> <!-- content -->
 
-           <?php include('footer.php');?>
+           <?php include('includes/footer.php');?>
 
             </div>
 
@@ -204,3 +241,4 @@
 
     </body>
 </html>
+<?php } ?>
