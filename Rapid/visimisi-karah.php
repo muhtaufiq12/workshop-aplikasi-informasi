@@ -1,8 +1,12 @@
+<?php
+include('admin/includes/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Kelurahan Karah - Profil</title>
+  <title>Kelurahan Karah - Visi Misi Kelurahan Karah</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -64,12 +68,12 @@
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
           <li><a href="index.php">Beranda</a></li>
-                    <li class="drop-down active"><a href="profil.html">Profil</a>
+                    <li class="drop-down"><a href="profil.html">Profil</a>
             <ul>
               <li class="drop-down"><a href="#">Visi Misi</a>
                 <ul>
-                  <li><a href="visimisi-karah.php">Kelurahan Karah</a></li>
-                  <li><a href="visimisi-pkk.html">TP-PKK Kelurahan Karah</a></li>
+                  <li class="active"><a href="visimisi-karah.php">Kelurahan Karah</a></li>
+                  <li><a href="visimisi-pkk.php">TP-PKK Kelurahan Karah</a></li>
                 </ul>
               </li>
               <li><a href="tujuan.html">Tujuan</a></li>
@@ -102,84 +106,36 @@
   <!--==========================
     Intro Section
   ============================-->
+  <?php 
+$pagetype='visimisi';
+$query=mysqli_query($con,"select PageTitle,Description from tblprofile where PageName='$pagetype'");
+while($row=mysqli_fetch_array($query))
+{
+
+?>
   <section id="intro" class="clearfix">
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
-        <div class="col-md-6 intro-info order-md-first order-last">
-          <h2>Profil PKK<br>Kelurahan <span>Karah</span></h2>
+        <div class="col-md-12 intro-info order-md-first order-last">
+        <h2><center><?php echo htmlentities($row['PageTitle'])?></center></h2>
         </div>
-  
-        <div class="col-md-6 intro-img order-md-last order-last">
-          <img src="img/profil.jpeg" alt="image"  class="img-fluid">
-        </div>
+        <div class="col-lg-8">
+        <div class="why-us-content">
+ 
+
+
+
+              
+              <p><?php echo $row['Description'];?></p>
+
+
+<?php } ?>
       </div>
 
     </div>
   </section><!-- #intro -->
 
   <main id="main">
-
-    <!--==========================
-      Services Section
-    ============================-->
-    <section id="services" class="section-bg bg-white">
-      <div class="container">
-
-        <header class="section-header">
-          <h3>PROFIL</h3>
-          <p>PKK Kelurahan Karah</p>
-        </header>
-
-        <div class="row">
-
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><img src="img/logo-profil/visimisi.png" width="55" height="55"></div>
-              <h4 class="title"><a href="visimisi.html">Visi Misi</a></h4>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><img src="img/logo-profil/tujuan.png" width="55" height="55"></div>
-              <h4 class="title"><a href="tujuan.html">Tujuan</a></h4>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><img src="img/logo-profil/struktur.png" width="55" height="55"></div>
-              <h4 class="title"><a href="struktur.html">Struktur Organisasi</a></h4>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="box">
-                <div class="icon"><img src="img/Logo-PKK.png" width="55" height="55"></div>
-                <h4 class="title"><a href="lambang.html">Arti Lambang</a></h4>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
-            <div class="box">
-                <div class="icon"><img src="img/logo-profil/sejarah.png" width="55" height="55"></div>
-              <h4 class="title"><a href="sejarah.html">Sejarah</a></h4>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
-            <div class="box">
-                <div class="icon"><img src="img/logo-profil/dharma_wanita.png" width="55" height="55"></div>
-              <h4 class="title"><a href="marspkk.html">Mars PKK</a></h4>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
-            <div class="box">
-                <div class="icon"><img src="img/logo-profil/program.png" width="55" height="55"></div>
-              <h4 class="title"><a href="10pokok.html">10 Program PKK</a></h4>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- #services -->
 
   </main>
 

@@ -69,13 +69,13 @@ include('admin/includes/config.php');
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Beranda</a></li>
+          <li class="active"><a href="index.php">Beranda</a></li>
                     <li class="drop-down"><a href="profil.html">Profil</a>
             <ul>
               <li class="drop-down"><a href="#">Visi Misi</a>
                 <ul>
-                  <li><a href="visimisi-karah.html">Kelurahan Karah</a></li>
-                  <li><a href="visimisi-pkk.html">TP-PKK Kelurahan Karah</a></li>
+                  <li><a href="visimisi-karah.php">Kelurahan Karah</a></li>
+                  <li><a href="visimisi-pkk.php">TP-PKK Kelurahan Karah</a></li>
                 </ul>
               </li>
               <li><a href="tujuan.html">Tujuan</a></li>
