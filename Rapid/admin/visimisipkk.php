@@ -41,10 +41,10 @@
         <div id="wrapper">
 
             <!-- Top Bar Start -->
-           <?php include('topheader.php');?>
-            <!-- ========== Left Sidebar Start ========== -->
-             <?php include('leftsidebar.php');?>
-            <!-- Left Sidebar End -->
+        <?php include('includes/topheader.php');?>
+        <!-- ========== Left Sidebar Start ========== -->
+        <?php include('includes/leftsidebar.php');?>
+        <!-- Left Sidebar End -->
 
 
 
@@ -128,7 +128,7 @@
 
                 </div> <!-- content -->
 
-           <?php include('footer.php');?>
+           <?php include('includes/footer.php');?>
 
             </div>
 
