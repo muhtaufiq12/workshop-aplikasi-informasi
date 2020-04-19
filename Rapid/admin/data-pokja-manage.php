@@ -2,17 +2,18 @@
 session_start();
 include('includes/config.php');
 error_reporting(0);
+$id = $_GET['pid'];
 if (strlen($_SESSION['login']) == 0) {
     header('location:login.php');
 } else {
     if (isset($_POST['update'])) {
-        $pagetype = 'visimisi';
-        $pagetitle = $_POST['pagetitle'];
-        $pagedetails = $_POST['pagedescription'];
+        // $pagetitle = $_POST['pagetitle'];
+        // $pagedetails = $_POST['pagedescription'];
+        $content=$_POST['content'];
 
-        $query = mysqli_query($con, "update tblprofile set PageTitle='$pagetitle',Description='$pagedetails' where PageName='$pagetype' ");
+        $query = mysqli_query($con, "update tbldatapokja set content='$content' where id='$id' ");
         if ($query) {
-            $msg = "Visi Misi Karah successfully updated ";
+            $msg = "Data successfully updated ";
         } else {
             $error = "Something went wrong . Please try again.";
         }
@@ -77,18 +78,22 @@ if (strlen($_SESSION['login']) == 0) {
                 <div class="content">
                     <div class="container">
 
+                        <?php
+                        $query = mysqli_query($con, "select name,content from tbldatapokja where id='$id'");
+                        while ($row = mysqli_fetch_array($query)) {
 
+                        ?>
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">Profil </h4>
+                                    <h4 class="page-title"><?php echo htmlentities($row['name']) ?> </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Pages</a>
                                         </li>
 
                                         <li class="active">
-                                            Visi Misi Karah
+                                        <?php echo htmlentities($row['name']) ?>
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -115,27 +120,15 @@ if (strlen($_SESSION['login']) == 0) {
 
                             </div>
                         </div>
-                        <?php
-                        $pagetype = 'visimisi';
-                        $query = mysqli_query($con, "select PageTitle,Description from tblprofile where PageName='$pagetype'");
-                        while ($row = mysqli_fetch_array($query)) {
-
-                        ?>
-
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
                                     <div class="p-6">
                                         <div class="">
                                             <form name="visimisi" method="post">
-                                                <div class="form-group m-b-20">
-                                                    <label for="exampleInputEmail1">Page Title</label>
-                                                    <input type="text" class="form-control" id="pagetitle" name="pagetitle" value="<?php echo htmlentities($row['PageTitle']) ?>" required>
-                                                </div>
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="card-box">
-                                                            <h4 class="m-b-30 m-t-0 header-title"><b>Page Details</b></h4>
-                                                            <textarea class="summernote" name="pagedescription" required><?php echo htmlentities($row['Description']) ?></textarea>
+                                                            <textarea class="summernote" name="content" required><?php echo htmlentities($row['content']) ?></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

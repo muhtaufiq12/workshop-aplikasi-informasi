@@ -1,12 +1,12 @@
 <?php
 include('admin/includes/config.php');
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Kelurahan Karah - Visi Misi TP-PKK Kelurahan Karah</title>
+  <title>Kelurahan Karah - Data Kelurahan</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -72,8 +72,8 @@ include('admin/includes/config.php');
             <ul>
               <li class="drop-down"><a href="#">Visi Misi</a>
                 <ul>
-                  <li><a href="visimisi-karah.php">Kelurahan Karah</a></li>
-                  <li class="active"><a href="visimisi-pkk.php">TP-PKK Kelurahan Karah</a></li>
+                  <li><a href="visimisi-karah.html">Kelurahan Karah</a></li>
+                  <li><a href="visimisi-pkk.html">TP-PKK Kelurahan Karah</a></li>
                 </ul>
               </li>
               <li><a href="tujuan.html">Tujuan</a></li>
@@ -81,7 +81,7 @@ include('admin/includes/config.php');
               <li><a href="arti-lambang.html">Arti Lambang PKK</a></li>
               <li><a href="sejarah.html">Sejarah</a></li>
               <li><a href="marspkk.html">Mars PKK</a></li>
-              <li><a href="10program.html">10 Program Pokok PKK</a></li>
+              <li class="active"><a href="10program.html">10 Program Pokok PKK</a></li>
             </ul>
           </li>
           <li><a href="berita.html">Berita</a></li>
@@ -106,29 +106,46 @@ include('admin/includes/config.php');
   <!--==========================
     Intro Section
   ============================-->
-  <?php 
-$pagetype='visimisipkk';
-$query=mysqli_query($con,"select PageTitle,Description from tblprofile where PageName='$pagetype'");
-while($row=mysqli_fetch_array($query))
-{
-
-?>
   <section id="intro" class="clearfix">
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
         <div class="col-md-12 intro-info order-md-first order-last">
-        <h2><center><?php echo htmlentities($row['PageTitle'])?></center></h2>
+          <h2><center>Data Kelurahan<span> Karah</span></h2>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-10">
         <div class="why-us-content">
-        <p><?php echo $row['Description'];?></p>
-<?php } ?>
+        <div class="features wow bounceInUp clearfix">
+            <center><img src="img/Logo-PKK.png" width="200" height="200"></i>
+            <h4><b></b></h4>
+        </div>
+        <center><p><b>--------- Berikut ini adalah data - data mengenai Kelurahan Karah ---------</b></p></center>
       </div>
 
     </div>
   </section><!-- #intro -->
 
   <main id="main">
+
+      <!--==========================
+      Services Section
+    ============================-->
+    <section id="services" class="section-bg bg-white">
+        <div class="container">
+          <div class="row justify-content-center align-self-center">
+            <div class="col-md-6 col-lg-8 wow bounceInUp" data-wow-duration="1.4s">
+              
+            <?php
+              $pagetype = 'kelurahan';
+              $query = mysqli_query($con, "select content from tbldata where page_name='$pagetype'");
+              while ($row = mysqli_fetch_array($query)) {
+
+              ?>
+                <?php echo $row['content']; ?>
+              <?php } ?>
+
+          </div>
+        </div>
+      </section><!-- #services -->
 
   </main>
 
@@ -181,22 +198,6 @@ while($row=mysqli_fetch_array($query))
       </div>
     </center>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div class="copyright">
         &copy; Copyright <strong>Rapid</strong>. All Rights Reserved
       </div>
