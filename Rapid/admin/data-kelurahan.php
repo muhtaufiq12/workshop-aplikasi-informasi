@@ -4,17 +4,7 @@ include('includes/config.php');
 error_reporting(0);
 if (strlen($_SESSION['login']) == 0) {
     header('location:index.php');
-} else {
-
-    if ($_GET['action'] = 'del') {
-        $postid = intval($_GET['pid']);
-        $query = mysqli_query($con, "update tblposts set Is_Active=0 where id='$postid'");
-        if ($query) {
-            $msg = "Post deleted ";
-        } else {
-            $error = "Something went wrong . Please try again.";
-        }
-    }
+}
 ?>
 
     <!DOCTYPE html>
@@ -113,17 +103,16 @@ if (strlen($_SESSION['login']) == 0) {
                                         <table class="table table-colored table-centered table-inverse m-0">
                                             <thead>
                                                 <tr>
-
-                                                    <th>Title</th>
-                                                    <th>Category</th>
-                                                    <th>Subcategory</th>
+                                                    <th>id</th>
+                                                    <th>Name</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
 
                                                 <?php
-                                                $query = mysqli_query($con, "select tblposts.id as postid,tblposts.PostTitle as title,tblcategory.CategoryName as category,tblsubcategory.Subcategory as subcategory from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join tblsubcategory on tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 ");
+                                                $pagetype = 'kelurahan';
+                                                $query = mysqli_query($con, "select id,name from tbldata where page_name='$pagetype'");
                                                 $rowcount = mysqli_num_rows($query);
                                                 if ($rowcount == 0) {
                                                 ?>
@@ -138,12 +127,11 @@ if (strlen($_SESSION['login']) == 0) {
                                                         while ($row = mysqli_fetch_array($query)) {
                                                         ?>
                                                     <tr>
-                                                        <td><b><?php echo htmlentities($row['title']); ?></b></td>
-                                                        <td><?php echo htmlentities($row['category']) ?></td>
-                                                        <td><?php echo htmlentities($row['subcategory']) ?></td>
+                                                        <td><?php echo htmlentities($row['id']); ?></td>
+                                                        <td><?php echo htmlentities($row['name']) ?></td>
 
-                                                        <td><a href="edit-post.php?pid=<?php echo htmlentities($row['postid']); ?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
-                                                            &nbsp;<a href="manage-posts.php?pid=<?php echo htmlentities($row['postid']); ?>&&action=del" onclick="return confirm('Do you reaaly want to delete ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
+                                                        <td><a href="data-manage.php?pid=<?php echo htmlentities($row['id']); ?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
+                                                            &nbsp;<a href="data-delete.php?pid=<?php echo htmlentities($row['id']); ?>" onclick="return confirm('Do you reaaly want to delete ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
                                                     </tr>
                                             <?php }
                                                     } ?>
@@ -216,4 +204,3 @@ if (strlen($_SESSION['login']) == 0) {
     </body>
 
     </html>
-<?php } ?>

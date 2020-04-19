@@ -4,6 +4,7 @@ include('admin/includes/config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Kelurahan Karah - Beranda</title>
@@ -70,7 +71,7 @@ include('admin/includes/config.php');
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.php">Beranda</a></li>
-                    <li class="drop-down"><a href="profil.html">Profil</a>
+          <li class="drop-down"><a href="profil.html">Profil</a>
             <ul>
               <li class="drop-down"><a href="#">Visi Misi</a>
                 <ul>
@@ -88,12 +89,12 @@ include('admin/includes/config.php');
           </li>
           <li><a href="berita.html">Berita</a></li>
           <li><a href="proker.html">Program Kerja</a></li>
-          <li><a href="up2k.html">UP2K</a></li>
+          <li><a href="up2k.php">UP2K</a></li>
           <li class="drop-down">
             <a href="#">Data</a>
             <ul>
-              <li><a href="datakelurahan.html">Data Kelurahan</a></li>
-              <li><a href="datatppkk.html">Data TP PKK</a></li>
+              <li><a href="datakelurahan.php">Data Kelurahan</a></li>
+              <li><a href="datatppkk.php">Data TP PKK</a></li>
             </ul>
           </li>
           <li><a href="pengumuman.html">Pengumuman</a></li>
@@ -101,7 +102,7 @@ include('admin/includes/config.php');
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </nav><!-- .main-nav -->
-      
+
     </div>
   </header><!-- #header -->
 
@@ -143,22 +144,21 @@ include('admin/includes/config.php');
             <div class="about-content">
 
 
-<?php 
-$pagetype='sambutanlurah';
-$query=mysqli_query($con,"select PageTitle,Description from tblberanda where PageName='$pagetype'");
-while($row=mysqli_fetch_array($query))
-{
+              <?php
+              $pagetype = 'sambutanlurah';
+              $query = mysqli_query($con, "select PageTitle,Description from tblberanda where PageName='$pagetype'");
+              while ($row = mysqli_fetch_array($query)) {
 
-?>
-
+              ?>
 
 
-              <h2><?php echo htmlentities($row['PageTitle'])?></h2>
-              <p><?php echo $row['Description'];?></p>
+
+                <h2><?php echo htmlentities($row['PageTitle']) ?></h2>
+                <p><?php echo $row['Description']; ?></p>
 
 
-<?php } ?>
-              
+              <?php } ?>
+
             </div>
           </div>
         </div>
@@ -177,26 +177,25 @@ while($row=mysqli_fetch_array($query))
 
           <div class="col-lg-7 col-md-6">
             <div class="about-content">
-<?php 
-$pagetype='sambutantppkk';
-$query=mysqli_query($con,"select PageTitle,Description from tblberanda where PageName='$pagetype'");
-while($row=mysqli_fetch_array($query))
-{
+              <?php
+              $pagetype = 'sambutantppkk';
+              $query = mysqli_query($con, "select PageTitle,Description from tblberanda where PageName='$pagetype'");
+              while ($row = mysqli_fetch_array($query)) {
 
-?>
-
+              ?>
 
 
-              <h2><?php echo htmlentities($row['PageTitle'])?></h2>
-              <p><?php echo $row['Description'];?></p>
+
+                <h2><?php echo htmlentities($row['PageTitle']) ?></h2>
+                <p><?php echo $row['Description']; ?></p>
 
 
-<?php } ?>
-              
+              <?php } ?>
+
             </div>
           </div>
 
-<div class="col-lg-5 col-md-6">
+          <div class="col-lg-5 col-md-6">
             <div class="about-img">
               <img src="img/ketua-pkk.jpeg" alt="">
             </div>
@@ -223,13 +222,15 @@ while($row=mysqli_fetch_array($query))
           <div class="col-md-6 col-lg-6 wow bounceInUp" data-wow-duration="1.4s">
             <div class="box">
               <img src="img/Berita/1.jpeg" width="200" height="200">
-                <div class="portfolio-info">
-                  <div>
-                    <a href="img/Berita/1.jpeg" class="link-preview" data-lightbox="portfolio" data-title="POKJA IV" title="Preview"><i class="ion ion-eye"></i></a>
-                  </div>
+              <div class="portfolio-info">
+                <div>
+                  <a href="img/Berita/1.jpeg" class="link-preview" data-lightbox="portfolio" data-title="POKJA IV" title="Preview"><i class="ion ion-eye"></i></a>
                 </div>
-              <p><h4 class="title"><a href="berita.html">Kenali Gejala Infeksi Corona Dari Hari Ke Hari</a></h4></p>
-              <p class="description">Edukasi kepada warga mengenai virus ini terus dilakukan, terutama mengenai gejala yang sebaiknya diketahui 
+              </div>
+              <p>
+                <h4 class="title"><a href="berita.html">Kenali Gejala Infeksi Corona Dari Hari Ke Hari</a></h4>
+              </p>
+              <p class="description">Edukasi kepada warga mengenai virus ini terus dilakukan, terutama mengenai gejala yang sebaiknya diketahui
                 sehingga setiap orang bisa membatasi dirinya dan tak menjadi pembawa virus yang baru.</p>
             </div>
           </div>
@@ -238,7 +239,9 @@ while($row=mysqli_fetch_array($query))
               <video width="400" height="auto" controls>
                 <source src="img/Berita/2.mp4" type="video/mp4" width="400">
               </video>
-              <p><h4 class="title"><a href="berita.html">Hindari Bersalaman Untuk Pencegahan Corona</a></h4></p>
+              <p>
+                <h4 class="title"><a href="berita.html">Hindari Bersalaman Untuk Pencegahan Corona</a></h4>
+              </p>
               <p class="description">Tidak salaman bukan berarti tidak berteman. Hal ini merupakan salah satu upaya Pencegahan
                 penyebaran virus Covid-19 atau Corona dalam lingkungan Kelurahan Karah
               </p>
@@ -260,47 +263,47 @@ while($row=mysqli_fetch_array($query))
     <div class="container">
 
 
-<div class="container">
-  <center>
-    
-      <div class="row">
+      <div class="container">
+        <center>
 
-        <!-- Footer Location -->
-        <div class="col-lg-4 mt-5 mb-5">
-          <h4 class="text-uppercase mb-4">Kontak Kami</h4>
-          <p class="lead mb-0"> Jl. Bibis Karah No 1 Surabaya
-            <br>karahkelurahan22@gmail.com
-            <br>Telp. 8280357</p>
-        </div>
+          <div class="row">
 
-        <!-- Footer Social Icons -->
-        <div class="col-lg-4 mt-5 mb-5">
-          <h4 class="text-uppercase mb-4">Ikuti Kami</h4>
-          <a class="btn btn-outline-dark btn-social mx-1" href="#">
-            <i class="fa fa-facebook"></i>
-          </a>
-          <a class="btn btn-outline-dark btn-social mx-1" href="#">
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a class="btn btn-outline-dark btn-social mx-1" href="#">
-            <i class="fa fa-linkedin"></i>
-          </a>
-          <a class="btn btn-outline-dark btn-social mx-1" href="#">
-            <i class="fa fa-instagram"></i>
-          </a>
-        </div>
+            <!-- Footer Location -->
+            <div class="col-lg-4 mt-5 mb-5">
+              <h4 class="text-uppercase mb-4">Kontak Kami</h4>
+              <p class="lead mb-0"> Jl. Bibis Karah No 1 Surabaya
+                <br>karahkelurahan22@gmail.com
+                <br>Telp. 8280357</p>
+            </div>
 
-        <!-- Footer About Text -->
-        <div class="col-lg-4 mt-5">
-          <h4 class="text-uppercase mb-4">Tentang</h4>
-          <p class="lead mb-0">Kelurahan Karah
-            <br>Kecamatan Jambangan Kota Surabaya
-            <br>Jawa Timur - Indonesia</p>
-        </div>
+            <!-- Footer Social Icons -->
+            <div class="col-lg-4 mt-5 mb-5">
+              <h4 class="text-uppercase mb-4">Ikuti Kami</h4>
+              <a class="btn btn-outline-dark btn-social mx-1" href="#">
+                <i class="fa fa-facebook"></i>
+              </a>
+              <a class="btn btn-outline-dark btn-social mx-1" href="#">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a class="btn btn-outline-dark btn-social mx-1" href="#">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a class="btn btn-outline-dark btn-social mx-1" href="#">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
 
+            <!-- Footer About Text -->
+            <div class="col-lg-4 mt-5">
+              <h4 class="text-uppercase mb-4">Tentang</h4>
+              <p class="lead mb-0">Kelurahan Karah
+                <br>Kecamatan Jambangan Kota Surabaya
+                <br>Jawa Timur - Indonesia</p>
+            </div>
+
+          </div>
+        </center>
       </div>
-    </center>
-    </div>
 
 
 
@@ -355,4 +358,5 @@ while($row=mysqli_fetch_array($query))
   <script src="js/main.js"></script>
 
 </body>
+
 </html>

@@ -49,15 +49,15 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> UP2K </span> </a>
+                                <a href="up2k.php" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> UP2K </span> </a>
 
                             </li>
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Data </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Data Kelurahan</a></li>
-                                    <li><a href="#">Data TP PKK</a></li>
+                                    <li><a href="data-kelurahan.php">Data Kelurahan</a></li>
+                                    <li><a href="data-tp-pkk.php">Data TP PKK</a></li>
                                 </ul>
                             </li>
 
