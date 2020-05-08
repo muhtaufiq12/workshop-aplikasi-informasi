@@ -28,7 +28,7 @@
                                     <li><a href="tujuan.php">Tujuan</a></li>
                                     <li><a href="struktur.php">Struktur Organisasi</a></li>
                                     <li><a href="artilambang.php">Arti Lambang PKK</a></li>
-                                    <li><a href="#">Sejarah</a></li>
+                                    <li><a href="sejarah.php">Sejarah</a></li>
                                     <li><a href="#">Mars PKK</a></li>
                                     <li><a href="#">10 Program Pokok PKK</a></li>
                                 </ul>

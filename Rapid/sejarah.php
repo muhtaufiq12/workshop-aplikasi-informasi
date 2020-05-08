@@ -6,7 +6,7 @@ include('admin/includes/config.php');
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Kelurahan Karah - Visi Misi TP-PKK Kelurahan Karah</title>
+  <title>Kelurahan Karah - Sejarah</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -72,14 +72,14 @@ include('admin/includes/config.php');
             <ul>
               <li class="drop-down"><a href="#">Visi Misi</a>
                 <ul>
-                  <li><a href="visimisi-karah.php">Kelurahan Karah</a></li>
-                  <li class="active"><a href="visimisi-pkk.php">TP-PKK Kelurahan Karah</a></li>
+                  <li><a href="visimisi-karah.html">Kelurahan Karah</a></li>
+                  <li><a href="visimisi-pkk.html">TP-PKK Kelurahan Karah</a></li>
                 </ul>
               </li>
               <li><a href="tujuan.html">Tujuan</a></li>
-              <li><a href="struktur.html">Struktur Organisasi</a></li>
+              <li><a href="#">Struktur Organisasi</a></li>
               <li><a href="arti-lambang.html">Arti Lambang PKK</a></li>
-              <li><a href="sejarah.php">Sejarah</a></li>
+              <li class="active"><a href="sejarah.html">Sejarah</a></li>
               <li><a href="marspkk.html">Mars PKK</a></li>
               <li><a href="10program.html">10 Program Pokok PKK</a></li>
             </ul>
@@ -107,7 +107,7 @@ include('admin/includes/config.php');
     Intro Section
   ============================-->
   <?php 
-$pagetype='visimisipkk';
+$pagetype='sejarah';
 $query=mysqli_query($con,"select PageTitle,Description from tblprofile where PageName='$pagetype'");
 while($row=mysqli_fetch_array($query))
 {
@@ -117,18 +117,39 @@ while($row=mysqli_fetch_array($query))
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
         <div class="col-md-12 intro-info order-md-first order-last">
-        <h2><center><?php echo htmlentities($row['PageTitle'])?></center></h2>
+          <h2><center><?php echo htmlentities($row['PageTitle'])?></center></h2>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-10">
         <div class="why-us-content">
-        <p><?php echo $row['Description'];?></p>
-<?php } ?>
+        <div class="features wow bounceInUp clearfix">
+            <center><img src="img/Logo-PKK.png" width="200" height="200"></i>
+            <h4><b></b></h4>
+        </div>
+        <center><p><b>Berikut adalah penjelasan mengenai berdirinya PKK atau Pembinaan Kesejahteraan Keluarga.</b></p></center>
       </div>
 
     </div>
   </section><!-- #intro -->
 
   <main id="main">
+
+      <!--==========================
+      Services Section
+    ============================-->
+    <section id="services" class="section-bg bg-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-12 wow bounceInUp" data-wow-duration="1.4s">
+              <div class="box">
+                <p class="description">
+                <?php echo $row['Description'];?>
+                <?php } ?>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section><!-- #services -->
 
   </main>
 
