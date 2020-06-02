@@ -12,7 +12,7 @@ if (strlen($_SESSION['login']) == 0) {
 
         $query = mysqli_query($con, "update tblprofile set PageTitle='$pagetitle',Description='$pagedetails' where PageName='$pagetype' ");
         if ($query) {
-            $msg = "Visi Misi Karah successfully updated ";
+            $msg = "Sejarah PKK successfully updated ";
         } else {
             $error = "Something went wrong . Please try again.";
         }
