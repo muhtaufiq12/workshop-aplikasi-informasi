@@ -27,7 +27,7 @@ else{
 //rename the image file
         $imgnewfile=md5($imgfile).$extension;
 // Code for move image into directory
-        move_uploaded_file($_FILES["postimage"]["tmp_name"],"postimages/".$imgnewfile);
+        move_uploaded_file($_FILES["postimage"]["tmp_name"],"galeri/".$imgnewfile);
 
         $status=1;
         $query = mysqli_query($con, "update tblprofile set PageTitle='$pagetitle',Description='$pagedetails', PageImage='$imgnewfile' where PageName='$pagetype' ");

@@ -111,7 +111,7 @@ while($row=mysqli_fetch_array($query))
               <div class="box">
                 <div class="icon"><img src="img/Logo-PKK.png" width="55" height="55"></div>
                 <h4 class="title">BAGAN STRUKTUR TP PKK KELURAHAN KARAH 2019</a></h4><br>
-                <img src="admin/postimages/<?php echo htmlentities($row['PageImage']);?>">
+                <img src="admin/galeri/<?php echo htmlentities($row['PageImage']);?>">
                 <?php } ?>
               </div>
             </div>
