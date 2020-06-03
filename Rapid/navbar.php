@@ -10,9 +10,9 @@
       </ul>
     </li>
     <li><a href="tujuan.php">Tujuan</a></li>
-    <li><a href="struktur.html">Struktur Organisasi</a></li>
+    <li><a href="struktur.php">Struktur Organisasi</a></li>
     <li><a href="arti-lambang.html">Arti Lambang PKK</a></li>
-    <li><a href="sejarah.html">Sejarah</a></li>
+    <li><a href="sejarah.php">Sejarah</a></li>
     <li><a href="marspkk.html">Mars PKK</a></li>
     <li><a href="10program.html">10 Program Pokok PKK</a></li>
   </ul>
