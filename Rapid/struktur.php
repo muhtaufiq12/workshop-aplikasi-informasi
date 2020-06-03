@@ -1,12 +1,13 @@
 <?php
 include('admin/includes/config.php');
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Kelurahan Karah - Data Kelurahan</title>
+  <title>Kelurahan Karah - Arti Lambang</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -64,12 +65,18 @@ include('admin/includes/config.php');
         <a href="#header" class="scrollto"><img src="img/Logo-PKK.png" alt="" class="img-fluid"></a>
         <a href="#header" class="scrollto"><img src="img/Logo_surabaya.gif" alt="" class="img-fluid"></a>
       </div>
-
       <?php include('navbar.php');?>
-  		
-      
     </div>
   </header><!-- #header -->
+
+
+  <?php 
+$pagetype='strukturorganisasi';
+$query=mysqli_query($con,"select PageTitle,PageImage from tblprofile where PageName='$pagetype'");
+while($row=mysqli_fetch_array($query))
+{
+
+?>
 
   <!--==========================
     Intro Section
@@ -78,7 +85,7 @@ include('admin/includes/config.php');
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
         <div class="col-md-12 intro-info order-md-first order-last">
-          <h2><center>Data Kelurahan<span> Karah</span></h2>
+          <h2><center>STRUKTUR TP PKK<br>KELURAHAN <span> KARAH</span> 2019</h2>
         </div>
         <div class="col-lg-10">
         <div class="why-us-content">
@@ -86,7 +93,7 @@ include('admin/includes/config.php');
             <center><img src="img/Logo-PKK.png" width="200" height="200"></i>
             <h4><b></b></h4>
         </div>
-        <center><p><b>--------- Berikut ini adalah data - data mengenai Kelurahan Karah ---------</b></p></center>
+        <center><p><b>KELURAHAN KARAH, KECAMATAN JEMBANGAN, KOTA SURABAYA</b></p></center>
       </div>
 
     </div>
@@ -97,20 +104,17 @@ include('admin/includes/config.php');
       <!--==========================
       Services Section
     ============================-->
-    <section id="services" class="section-bg bg-white">
+    <section id="services" class="section-bg">
         <div class="container">
-          <div class="row justify-content-center align-self-center">
-            <div class="col-md-6 col-lg-8 wow bounceInUp" data-wow-duration="1.4s">
-              
-            <?php
-              $pagetype = 'kelurahan';
-              $query = mysqli_query($con, "select content from tbldata where page_name='$pagetype'");
-              while ($row = mysqli_fetch_array($query)) {
-
-              ?>
-                <?php echo $row['content']; ?>
-              <?php } ?>
-
+          <div class="row">
+            <div class="col-md-6 col-lg-12 wow bounceInUp" data-wow-duration="1.4s">
+              <div class="box">
+                <div class="icon"><img src="img/Logo-PKK.png" width="55" height="55"></div>
+                <h4 class="title">BAGAN STRUKTUR TP PKK KELURAHAN KARAH 2019</a></h4><br>
+                <img src="admin/galeri/<?php echo htmlentities($row['PageImage']);?>">
+                <?php } ?>
+              </div>
+            </div>
           </div>
         </div>
       </section><!-- #services -->
@@ -166,6 +170,22 @@ include('admin/includes/config.php');
       </div>
     </center>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="copyright">
         &copy; Copyright <strong>Rapid</strong>. All Rights Reserved
       </div>

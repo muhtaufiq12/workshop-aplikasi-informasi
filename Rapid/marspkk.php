@@ -1,12 +1,12 @@
 <?php
 include('admin/includes/config.php');
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Kelurahan Karah - Data Kelurahan</title>
+  <title>Kelurahan Karah - Mars PKK</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -65,8 +65,40 @@ include('admin/includes/config.php');
         <a href="#header" class="scrollto"><img src="img/Logo_surabaya.gif" alt="" class="img-fluid"></a>
       </div>
 
-      <?php include('navbar.php');?>
-  		
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+                    <li class="drop-down"><a href="profil.html">Profil</a>
+            <ul>
+              <li class="drop-down"><a href="#">Visi Misi</a>
+                <ul>
+                  <li><a href="visimisi-karah.html">Kelurahan Karah</a></li>
+                  <li><a href="visimisi-pkk.html">TP-PKK Kelurahan Karah</a></li>
+                </ul>
+              </li>
+              <li><a href="tujuan.html">Tujuan</a></li>
+              <li><a href="struktur.html">Struktur Organisasi</a></li>
+              <li><a href="arti-lambang.html">Arti Lambang PKK</a></li>
+              <li><a href="sejarah.html">Sejarah</a></li>
+              <li class="active"><a href="marspkk.html">Mars PKK</a></li>
+              <li><a href="10program.html">10 Program Pokok PKK</a></li>
+            </ul>
+          </li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="proker.html">Program Kerja</a></li>
+          <li><a href="up2k.html">UP2K</a></li>
+          <li class="drop-down">
+            <a href="#">Data</a>
+            <ul>
+              <li><a href="datakelurahan.html">Data Kelurahan</a></li>
+              <li><a href="datatppkk.html">Data TP PKK</a></li>
+            </ul>
+          </li>
+          <li><a href="pengumuman.html">Pengumuman</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
       
     </div>
   </header><!-- #header -->
@@ -74,11 +106,19 @@ include('admin/includes/config.php');
   <!--==========================
     Intro Section
   ============================-->
+
+  <?php 
+$pagetype='marspkk';
+$query=mysqli_query($con,"select PageTitle,Description from tblprofile where PageName='$pagetype'");
+while($row=mysqli_fetch_array($query))
+{
+  ?>
+
   <section id="intro" class="clearfix">
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
         <div class="col-md-12 intro-info order-md-first order-last">
-          <h2><center>Data Kelurahan<span> Karah</span></h2>
+          <h2><center>Mars<span> PKK</span></h2>
         </div>
         <div class="col-lg-10">
         <div class="why-us-content">
@@ -86,7 +126,9 @@ include('admin/includes/config.php');
             <center><img src="img/Logo-PKK.png" width="200" height="200"></i>
             <h4><b></b></h4>
         </div>
-        <center><p><b>--------- Berikut ini adalah data - data mengenai Kelurahan Karah ---------</b></p></center>
+        <center><p><b>Berikut adalah mars PKK atau Pembinaan Kesejahteraan Keluarga yang merupakan lagu sangat penting
+          keberadaannya sebagai lagu wajib yang biasa dinyanyikan oleh ibu-ibu pengurus dan anggota Tim Penggerak (TP) 
+          PKK mulai pusat hingga daerah.</b></p></center>
       </div>
 
     </div>
@@ -99,18 +141,45 @@ include('admin/includes/config.php');
     ============================-->
     <section id="services" class="section-bg bg-white">
         <div class="container">
-          <div class="row justify-content-center align-self-center">
+          <div class="row justify-content-center align-self-center"">
             <div class="col-md-6 col-lg-8 wow bounceInUp" data-wow-duration="1.4s">
-              
-            <?php
-              $pagetype = 'kelurahan';
-              $query = mysqli_query($con, "select content from tbldata where page_name='$pagetype'");
-              while ($row = mysqli_fetch_array($query)) {
-
-              ?>
-                <?php echo $row['content']; ?>
-              <?php } ?>
-
+              <div class="box">
+                <div class="icon"><img src="img/Logo-PKK.png" width="55" height="55"></div>
+                <h4 class="title">Mars PKK</a></h4>
+                <p class="description">
+                <?php echo $row['Description'];?>
+                <?php } ?>
+                </p>
+                <!-- <audio src="img/Mars PKK Resmi.mp3" controls></audio> -->
+                <!-- <p class="description">
+                  Marilah hai semua Rakyat Indonesia <br>
+                  membangun segra <br>
+                  Membangun kluarga yang sejahtera <br>
+                  dengan PKK <br>
+                </p>
+                <br>
+                <p class="description">
+                  Hayatilah dan amalkan Pancasila <br>
+                  untuk Negara<br>
+                  Hidup gotong royong, makmur pangan dan sandang<br>
+                  rumah sehat sentosa<br>
+                </p>
+                <br>
+                <p class="description">
+                  Tata laksana di dalam rumah tangga<br>
+                  rapi dan indah<br>
+                  Didiklah putra berpribadi bangsa<br>
+                  trampil dan sehat<br>
+                </p>
+                <br>
+                <p class="description">
+                  Kembangkan koprasi jagalah lingkungan <br>
+                  dan sekitarnya<br>
+                  Aman dan bahagia kluarga berencana <br>
+                  Hidup jaya PKK <br>
+                </p> -->
+              </div>
+            </div>
           </div>
         </div>
       </section><!-- #services -->
@@ -166,6 +235,22 @@ include('admin/includes/config.php');
       </div>
     </center>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="copyright">
         &copy; Copyright <strong>Rapid</strong>. All Rights Reserved
       </div>
