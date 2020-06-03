@@ -9,7 +9,7 @@ if (strlen($_SESSION['login']) == 0) {
     if (isset($_POST['update'])) {
         // $pagetitle = $_POST['pagetitle'];
         // $pagedetails = $_POST['pagedescription'];
-        $content=$_POST['content'];
+        $content = $_POST['content'];
 
         $query = mysqli_query($con, "update tblproker set content='$content' where id='$id' ");
         if ($query) {
@@ -83,43 +83,45 @@ if (strlen($_SESSION['login']) == 0) {
                         while ($row = mysqli_fetch_array($query)) {
 
                         ?>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title"><?php echo htmlentities($row['proker']) ?> </h4>
-                                    <ol class="breadcrumb p-0 m-0">
-                                        <li>
-                                            <a href="#">Pages</a>
-                                        </li>
-
-                                        <li class="active">
-                                        <?php echo htmlentities($row['proker']) ?>
-                                        </li>
-                                    </ol>
-                                    <div class="clearfix"></div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="page-title-box">
+                                        <h4 class="page-title"><?php echo htmlentities($row['proker']) ?> </h4>
+                                        <ol class="breadcrumb p-0 m-0">
+                                            <li>
+                                                <a href="index.php">Admin</a>
+                                            </li>
+                                            <li>
+                                                <a href="program_kerja.php">Program Kerja</a>
+                                            </li>
+                                            <li class="active">
+                                                <?php echo htmlentities($row['proker']) ?>
+                                            </li>
+                                        </ol>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- end row -->
+                            <!-- end row -->
 
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <!---Success Message--->
-                                <?php if ($msg) { ?>
-                                    <div class="alert alert-success" role="alert">
-                                        <strong>Well done!</strong> <?php echo htmlentities($msg); ?>
-                                    </div>
-                                <?php } ?>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!---Success Message--->
+                                    <?php if ($msg) { ?>
+                                        <div class="alert alert-success" role="alert">
+                                            <strong>Well done!</strong> <?php echo htmlentities($msg); ?>
+                                        </div>
+                                    <?php } ?>
 
-                                <!---Error Message--->
-                                <?php if ($error) { ?>
-                                    <div class="alert alert-danger" role="alert">
-                                        <strong>Oh snap!</strong> <?php echo htmlentities($error); ?></div>
-                                <?php } ?>
+                                    <!---Error Message--->
+                                    <?php if ($error) { ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            <strong>Oh snap!</strong> <?php echo htmlentities($error); ?></div>
+                                    <?php } ?>
 
 
+                                </div>
                             </div>
-                        </div>
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
                                     <div class="p-6">

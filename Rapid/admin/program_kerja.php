@@ -76,13 +76,10 @@ if (strlen($_SESSION['login']) == 0) {
 
                                 <ol class="breadcrumb p-0 m-0">
                                     <li>
-                                        <a href="#">Admin</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Posts</a>
+                                        <a href="index.php">Admin</a>
                                     </li>
                                     <li class="active">
-                                        Manage Post
+                                    Program Kerja
                                     </li>
                                 </ol>
                                 <div class="clearfix"></div>
