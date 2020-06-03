@@ -106,7 +106,7 @@ include('admin/includes/config.php');
           while ($row = mysqli_fetch_array($query)) {
           echo '<h4>'.$row['tab'].'</h4>';
           echo '<div id="'.$row['id'].'" class="container tab-pane "><br>';
-          echo '<iframe src="admin/'.$row['content'].'" width="1200" height="780" style="border: none;"></iframe><br><br>';
+          echo '<iframe src="admin/'.$row['content'].'" height="780" style="border: none; width:100%;"></iframe><br><br>';
           echo '</div>';
           } ?>            
         </div>
