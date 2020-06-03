@@ -44,7 +44,7 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Program Kerja </span> </a>
+                                <a href="program_kerja.php" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Program Kerja </span> </a>
 
                             </li>
 

@@ -179,6 +179,35 @@ INSERT INTO `tblprofile` (`id`, `PageName`, `PageTitle`, `Description`, `PageIma
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblproker`
+--
+
+CREATE TABLE `tblproker` (
+  `id` int(11) NOT NULL,
+  `pokja` int(11) NOT NULL,
+  `proker` varchar(60) NOT NULL,
+  `content` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblproker`
+--
+
+INSERT INTO `tblproker` (`id`, `pokja`, `proker`, `content`) VALUES
+(1, 1, 'Penghayatan Dan Pengamalan Pancasila', '<span class=\"causale\">\r\n                            1. Simulasi (Beberan,Ular Tangga)<br>\r\n                            2. Pos Curhat: KDRT<br>\r\n                            3. Pola Asuh Anak Remaja<br>\r\n                            4. Sosialisasi P4GN</span> '),
+(2, 1, 'Gotong Royong', '<span class=\"causale\">\r\n                            1. Baksos<br>\r\n                            2. Rukun Kematian<br>\r\n                            3. Kerohanian (Pengajian, Kosidah Al Karomah,Persekutuan,do’a)<br>\r\n                            4. Arisan, Jimpitan .4<br>\r\n                            5. Kegiatan Lansia .5<br>\r\n                            6. PHBI</span>'),
+(3, 2, 'Pendidikan dan Keterampilan', '<span class=\"causale\">\r\n                            1. Monev PPT (Pos PAUDTerpadu) <br>\r\n                            2. Pelatihan MPE <br>\r\n                            3. Mengadakan karnaval <br>\r\n                            4. Sosialisasi CTPS ( Cuci Tangan Pakai Sabun ) kepada PPT <br>\r\n                            5. Beauty Class </span>'),
+(4, 2, 'Pengembangan Kehidupan Berkoperasi', '<span class=\"causale\">\r\n                            UP2K : Minuman blimbing, Sinom, Catering, Garmen, Teri Juku,\r\n                            Abon Sapi, Handycraft</span>'),
+(5, 3, 'Pangan', '<span class=\"causale\">\r\n                            1. Pelatihan pembuatan Kue dari daun Kelor <br>\r\n                            2. Pembuatan minuman dari blimbing <br>\r\n                            3. Menanam TOGA <br>\r\n                            4. Penanaman Serreh </span>'),
+(6, 3, 'Sandang', '<span class=\"causale\">\r\n                            1. Pelatihan melukis diatas kerudung/hijab <br>\r\n                            2. Lomba kreasi busana daur ulang <br>\r\n                            3. Sosialisasi Penerapan Menu Sehat berbasis B2SA </span>'),
+(7, 3, 'Perumahan dan Tata Laksana Rumah Tangga', '<span class=\"causale\">\r\n                            1. Penyuluhan Pemanfaatan Pekarangan <br>\r\n                            2. Penyuluhan Rumah Sehat <br>\r\n                            3. Pengelolaan Sampah dan daur ulang sampah </span>'),
+(8, 4, 'Kesehatan', '<span class=\"causale\">\r\n                            1. Sosialisasi PenyakitMenular(TB Paru, HIV, Kusta) <br>\r\n                            2. Pendampingan Ibu Hamil dan Nifas <br>\r\n                            3. Sosialisasi Pemeriksaan IVA test <br>\r\n                            4. PSJN <br>\r\n                            5. Sosialisasi dan Pengkajian PHBS <br>\r\n                            6. Pendampingan KOPASUS <br>\r\n                            7. POSBINDU</span>'),
+(9, 4, 'Kelestarian Lingkungan Hidup', '<span class=\"causale\">\r\n                            1. Pemilahan Sampah (Bank Sampah Jelantah) <br>\r\n                            2. Gebermantik (Gerakan Bersama Komitmen Bebas Jentik) <br>\r\n                            3. Pertemuan Evaluasi Pokja STBM</span>'),
+(10, 4, 'Perencanaan Kesehatan', '<span class=\"causale\">\r\n                            1. Penyuluhan dan Pembinaan Peserta KB <br>\r\n                            2. Gerakan Menabung <br>\r\n                            3. Grebek KB <br>\r\n                            4. Pengenalan Alat Kontrasepsi <br>\r\n                            5. Penyuluhan Kesehatan Reproduksi Remaja dan CATIN (Calon Pengantin)</span>');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tblu2pk`
 --
 
@@ -237,6 +266,12 @@ ALTER TABLE `tblprofile`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tblproker`
+--
+ALTER TABLE `tblproker`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `tblu2pk`
 --
 ALTER TABLE `tblu2pk`
@@ -275,6 +310,12 @@ ALTER TABLE `tbldatapokja`
 --
 ALTER TABLE `tblposts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `tblproker`
+--
+ALTER TABLE `tblproker`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `tblu2pk`

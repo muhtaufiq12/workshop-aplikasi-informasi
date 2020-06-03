@@ -18,7 +18,7 @@
   </ul>
 </li>
 <li><a href="berita.php">Berita</a></li>
-<li><a href="proker.html">Program Kerja</a></li>
+<li><a href="proker.php">Program Kerja</a></li>
 <li><a href="up2k.php">UP2K</a></li>
 <li class="drop-down">
   <a href="#">Data</a>
