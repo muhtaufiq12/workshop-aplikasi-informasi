@@ -1,6 +1,5 @@
 <?php
 include('admin/includes/config.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
