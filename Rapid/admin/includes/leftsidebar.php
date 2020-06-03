@@ -29,7 +29,7 @@
                                     <li><a href="struktur.php">Struktur Organisasi</a></li>
                                     <li><a href="artilambang.php">Arti Lambang PKK</a></li>
                                     <li><a href="sejarah.php">Sejarah</a></li>
-                                    <li><a href="#">Mars PKK</a></li>
+                                    <li><a href="marspkk.php">Mars PKK</a></li>
                                     <li><a href="10programpokok.php">10 Program Pokok PKK</a></li>
                                 </ul>
                             </li>
