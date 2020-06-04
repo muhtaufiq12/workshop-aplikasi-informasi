@@ -71,11 +71,6 @@
 
                             </li>
 
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Kontak </span> </a>
-
-                            </li>
-
                       </ul>
                   </div>
                   <!-- Sidebar -->
