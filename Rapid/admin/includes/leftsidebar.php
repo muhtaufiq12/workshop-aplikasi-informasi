@@ -27,7 +27,15 @@
                                     <li><a href="visimisipkk.php">Visi Misi PKK</a></li>
                                     <li><a href="tujuan.php">Tujuan</a></li>
                                     <li><a href="struktur.php">Struktur Organisasi</a></li>
-                                    <li><a href="artilambang.php">Arti Lambang PKK</a></li>
+                                    <li class="has_sub">
+                                        <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Lambang </span> <span class="menu-arrow"></span></a>
+                                        <ul class="list-unstyled">
+                                            <li><a href="arti-bentuk.php">Arti Bentuk</a></li>
+                                            <li><a href="arti-warna.php">Arti Warna</a></li>
+                                            <li><a href="arti-lambang.php">Arti Lambang</a></li>
+                                            <li><a href="arti-keseluruhan.php">Arti Keseluruhan</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="sejarah.php">Sejarah</a></li>
                                     <li><a href="marspkk.php">Mars PKK</a></li>
                                     <li><a href="10programpokok.php">10 Program Pokok PKK</a></li>

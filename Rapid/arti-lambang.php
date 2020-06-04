@@ -6,7 +6,7 @@ include('admin/includes/config.php');
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Kelurahan Karah - 10 Program Pokok PKK</title>
+  <title>Kelurahan Karah - Arti Lambang</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -65,27 +65,18 @@ include('admin/includes/config.php');
         <a href="#header" class="scrollto"><img src="img/Logo_surabaya.gif" alt="" class="img-fluid"></a>
       </div>
       <?php include('navbar.php');?>
+      
     </div>
   </header><!-- #header -->
 
   <!--==========================
     Intro Section
   ============================-->
-
-  <?php 
-$pagetype='10programpokok';
-$query=mysqli_query($con,"select PageTitle,Description from tblprofile where PageName='$pagetype'");
-while($row=mysqli_fetch_array($query))
-{
-
-?>
-
-
   <section id="intro" class="clearfix">
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
         <div class="col-md-12 intro-info order-md-first order-last">
-          <h2><center>10 PROGRAM POKOK<span> PKK</span></h2>
+          <h2><center>ARTI LAMBANG<span> PKK</span></h2>
         </div>
         <div class="col-lg-10">
         <div class="why-us-content">
@@ -93,7 +84,7 @@ while($row=mysqli_fetch_array($query))
             <center><img src="img/Logo-PKK.png" width="200" height="200"></i>
             <h4><b></b></h4>
         </div>
-        <center><p><b>-------- Berikut ini adalah daftar 10 Program Pokok PKK --------</b></p></center>
+        <center><p><b>Lambang PKK adalah lambang sebagaimana yang telah ditentukan dalam Surat Keputusan Menteri Dalam Negeri Nomor48 Tahun 1983.</b></p></center>
       </div>
 
     </div>
@@ -104,32 +95,80 @@ while($row=mysqli_fetch_array($query))
       <!--==========================
       Services Section
     ============================-->
-    <section id="services" class="section-bg bg-white">
+    <?php 
+    $pagetype='artibentuk';
+    $query=mysqli_query($con,"select PageTitle,Description from tblprofile where PageName='$pagetype'");
+    while($row=mysqli_fetch_array($query))
+    {
+
+    ?>
+    <section id="services" class="section-bg">
         <div class="container">
-          <div class="row justify-content-center align-self-center">
-            <div class="col-md-6 col-lg-8 wow bounceInUp" data-wow-duration="1.4s">
+          <div class="row">
+            <div class="col-md-6 col-lg-12 wow bounceInUp" data-wow-duration="1.4s">
               <div class="box">
+                <div class="icon"><img src="img/Logo-PKK.png" width="55" height="55"></div>
+                <h4 class="title"><?php echo htmlentities($row['PageTitle'])?></a></h4>
+                <?php echo $row['Description'];?>
+                <?php } ?>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-12 wow bounceInUp" data-wow-duration="1.4s">
+            <?php 
+                $pagetype='artiwarna';
+                $query=mysqli_query($con,"select PageTitle,Description from tblprofile where PageName='$pagetype'");
+                while($row=mysqli_fetch_array($query))
+                {
+
+            ?>
+                <div class="box">
                   <div class="icon"><img src="img/Logo-PKK.png" width="55" height="55"></div>
-                  <h4 class="title"><?php echo $row['PageTitle'];?></a></h4>
+                  <h4 class="title"><?php echo htmlentities($row['PageTitle'])?></a></h4>
                   <?php echo $row['Description'];?>
                 <?php } ?>
-                  <!-- <ol>
-                      <li class="description">Penghayatan dan Pengamatan Pancasila</li>
-                      <li class="description">Gotong Royong</li>
-                      <li class="description">Pangan</li>
-                      <li class="description">Sandang</li>
-                      <li class="description">Perumahan dan Tata Laksana Rumah Tangga</li>
-                      <li class="description">Pendidikan dan Ketrampilan</li>
-                      <li class="description">Kesehatan</li>
-                      <li class="description">Pengembangan Kehidupan Berkoprasi</li>
-                      <li class="description">Kelestarian Lingkungan Hidup</li>
-                      <li class="description">Perencanaan Sehat</li>
-                  </ol> -->
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-12 wow bounceInUp" data-wow-duration="1.4s">
+              <?php 
+                $pagetype='artilambang';
+                $query=mysqli_query($con,"select PageTitle,Description from tblprofile where PageName='$pagetype'");
+                while($row=mysqli_fetch_array($query))
+                {
+
+            ?>
+                <div class="box">
+                  <div class="icon"><img src="img/Logo-PKK.png" width="55" height="55"></div>
+                  <h4 class="title"><?php echo htmlentities($row['PageTitle'])?></a></h4>
+                  <?php echo $row['Description'];?>
+                <?php } ?>
                 </div>
               </div>
           </div>
         </div>
       </section><!-- #services -->
+
+    <!--==========================
+      Call To Action Section
+    ============================-->
+    <?php 
+    $pagetype='artikeseluruhan';
+    $query=mysqli_query($con,"select PageTitle,Description from tblprofile where PageName='$pagetype'");
+    while($row=mysqli_fetch_array($query))
+    {
+
+    ?>
+    <section id="call-to-action" class="wow fadeInUp">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center text-lg-center">
+              <h3 class="cta-title"><?php echo htmlentities($row['PageTitle'])?></h3>
+              <p class="cta-text"><?php echo $row['Description'];?></p>
+              <?php } ?>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- #call-to-action -->
 
   </main>
 
@@ -153,7 +192,7 @@ while($row=mysqli_fetch_array($query))
             <br>karahkelurahan22@gmail.com
             <br>Telp. 8280357</p>
         </div>
-
+        
         <!-- Footer Social Icons -->
         <div class="col-lg-4 mt-5 mb-5">
           <h4 class="text-uppercase mb-4">Ikuti Kami</h4>

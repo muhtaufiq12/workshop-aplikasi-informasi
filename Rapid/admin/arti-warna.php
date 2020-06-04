@@ -1,3 +1,30 @@
+<?php 
+session_start();
+include('includes/config.php');
+error_reporting(0);
+if(strlen($_SESSION['login'])==0)
+{ 
+    header('location:login.php');
+}
+else{
+    if(isset($_POST['update']))
+    {
+        $pagetype='artiwarna';
+        $pagetitle=$_POST['pagetitle'];
+        $pagedetails=$_POST['pagedescription'];
+
+        $query=mysqli_query($con,"update tblprofile set PageTitle='$pagetitle',Description='$pagedetails' where PageName='$pagetype' ");
+        if($query)
+        {
+            $msg="Arti Warna successfully updated ";
+        }
+    else{
+        $error="Something went wrong . Please try again.";    
+    } 
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -60,14 +87,14 @@
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
-                                    <h4 class="page-title">Beranda  </h4>
+                                    <h4 class="page-title">Arti Lambang </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="#">Pages</a>
+                                            <a href="#">Profile</a>
                                         </li>
                                      
                                         <li class="active">
-                                         Beranda
+                                         Arti Warna
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -77,41 +104,48 @@
                         <!-- end row -->
 
                         <div class="row">
+                            <div class="col-sm-6">
+                                <!---Success Message--->
+                                <?php if ($msg) { ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <strong>Well done!</strong> <?php echo htmlentities($msg); ?>
+                                    </div>
+                                <?php } ?>
+
+                                <!---Error Message--->
+                                <?php if ($error) { ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <strong>Oh snap!</strong> <?php echo htmlentities($error); ?></div>
+                                <?php } ?>
+
+
+                            </div>
+                        </div>
+                        <?php
+                        $pagetype = 'artiwarna';
+                        $query = mysqli_query($con, "select PageTitle,Description from tblprofile where PageName='$pagetype'");
+                        while ($row = mysqli_fetch_array($query)) {
+
+                        ?>
+
+                        <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="p-6">
                                     <div class="">
                                         <form name="aboutus" method="post">
  <div class="form-group m-b-20">
 <label for="exampleInputEmail1">Page Title</label>
-<input type="text" class="form-control" id="pagetitle" name="pagetitle" value="Arti Lambang"  required>
+<input type="text" class="form-control" id="pagetitle" name="pagetitle" value="<?php echo htmlentities($row['PageTitle'])?>"  required>
 </div>
-
-
-
-
-
-         
-
-     <div class="row">
-<div class="col-sm-12">
- <div class="card-box">
-<h4 class="m-b-30 m-t-0 header-title"><b>Page Details</b></h4>
-<textarea class="summernote" name="pagedescription"  required><p class="cta-text">Pemberdayaan dan Kesejahteraan Keluarga (PKK) yang merupakan gerakan nasional untuk pembangunan keluarga, berazaskan Pancasila dan UUD 1945 dan bertaqwa 
-                  kepada Tuhan Yang Maha Esa, melakukan kegiatan yang terus menerus dan berkesinambungan untuk menghimpun, menggerakan dan membina masyarakat dengan melaksanakan 10 Program
-                   Pokok PKK dengan sasaran keluarga sebagai unit terkecil dalam masyarakat untuk mewujudkan keluarga sejahtera yang selalu hidup dalam suasana damai, aman, tertib, tenteram, 
-                   makmur dan sejahtera dalam rangka Ketahanan Nasional.</p></textarea>
-</div>
-</div>
-</div>
-
 <div class="row">
 <div class="col-sm-12">
  <div class="card-box">
-<h4 class="m-b-30 m-t-0 header-title"><b>Feature Image</b></h4>
-<input type="file" class="form-control" id="postimage" name="postimage"  required>
+<h4 class="m-b-30 m-t-0 header-title"><b>Page Details</b></h4>
+<textarea class="summernote" name="pagedescription"  required><?php echo htmlentities($row['Description'])?></textarea>
 </div>
 </div>
 </div>
+<?php } ?>
 
 <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update and Post</button>
 
@@ -200,3 +234,4 @@
 
     </body>
 </html>
+        <?php } ?>
