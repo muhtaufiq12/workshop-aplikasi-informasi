@@ -62,7 +62,12 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Galeri </span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Galeri </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="add-galeri.php">Buat Album</a></li>
+                                    <li><a href="manage-galeri.php">Kelola Album</a></li>
+                                    <li><a href="trash-galeri.php">Sampah</a></li>
+                                </ul>
 
                             </li>
 

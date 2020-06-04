@@ -28,7 +28,7 @@
   </ul>
 </li>
 <li><a href="pengumuman.php">Pengumuman</a></li>
-<li><a href="galeri.html">Galeri</a></li>
+<li><a href="galeri.php">Galeri</a></li>
 <li><a href="kontak.html">Kontak</a></li>
 </ul>
 </nav>
